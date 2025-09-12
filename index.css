@@ -1,0 +1,165 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: #e7eaf6; /* darker but soft */
+  color: #1a1a2e;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: #4a628a;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem; /* smaller for better balance */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 1.2rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  padding-bottom: 0.2rem;
+  transition: color 0.2s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #dbe2f1;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* Section Styling */
+.unit-section {
+  padding: 2rem;
+}
+
+.unit-section h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+/* Card Layout */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  overflow: hidden;
+  text-align: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card img {
+  max-width: 100px;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-top: 0.8rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+  background: #f6f7fb;
+}
+
+/* Footer */
+footer {
+  background: #4a628a;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+}

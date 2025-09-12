@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Operating Systems Notes</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Modern Operating Systems</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="/practicals/index.html">Practicals</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="content"></main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 | MOS Notes Website | Designed by Srajan</p>
+  </footer>
+
+  <script>
+    // Dictionary of units and topics
+    const MOS_TOPICS = {
+      "Unit 1": [
+        { title: "Introduction to Operating Systems", img: "images/intro.png", link: "unit1/intro.html" },
+        { title: "Types of Operating Systems", img: "images/types.png", link: "unit1/types.html" },
+        { title: "Introduction To Linux", img: "images/linux.jpg", link: "unit1/linux.html" },
+        { title: "Basic Linux Commands", img: "images/commands.jpg", link: "unit1/commands.html" },
+        { title: "Inodes and Processes", img: "images/inodes.png", link: "unit1/inodes.html" },
+        { title: "Package Managers", img: "images/package.png", link: "unit1/package.html" },
+        { title: "Memory Management", img: "images/memory.jpg", link: "unit1/memory.html" },
+        { title: "File Systems", img: "images/filesystem.png", link: "unit1/filesystem.html" },
+        { title: "Scheduler", img: "images/scheduler.png", link: "unit1/scheduler.html" },
+        { title: "I/O", img: "images/io.jpg", link: "unit1/io.html" }
+      ],
+      "Unit 2": [
+        { title: "Shell Scripting", img: "images/shell.jpg", link: "unit2/shell.html" },
+        { title: "Linux Commands for Analytics", img: "images/analytics.jpg", link: "unit2/analytics.html" },
+        { title: "Dialogs", img: "images/dialogs.jpg", link: "unit2/dialogs.html" },
+        { title: "User Management", img: "images/user.png", link: "unit2/user.html" },
+        { title: "Permission Management", img: "images/permissions.jpg", link: "unit2/permissions.html" },
+        { title: "Cron Jobs", img: "images/cron.png", link: "unit2/cron.html" },
+        { title: "SSH", img: "images/ssh.png", link: "unit2/ssh.html" },
+        { title: "Storage", img: "images/storage.jpg", link: "unit2/storage.html" },
+        { title: "Virtualization", img: "images/virtualization.jpg", link: "unit2/virtualization.html" }
+      ],
+      "Unit 3": [
+        { title: "Interprocess Communication (IPC)", img: "images/ipc.jpg", link: "unit3/ipc.html" },
+        { title: "Distributed Systems", img: "images/distributed.png", link: "unit3/distributed.html" },
+        { title: "Operating System Security", img: "images/security.jpg", link: "unit3/security.html" },
+        { title: "Web Servers", img: "images/webserver.jpg", link: "unit3/webserver.html" },
+        { title: "PXE", img: "images/pxe.png", link: "unit3/pxe.html" },
+        { title: "VNC and RDP", img: "images/vnc.jpg", link: "unit3/vnc.html" },
+        { title: "Linux Containers", img: "images/containers.png", link: "unit3/containers.html" }
+      ]
+    };
+
+    const contentDiv = document.getElementById("content");
+
+    // Generate Units and Cards
+    Object.keys(MOS_TOPICS).forEach(unit => {
+      const section = document.createElement("section");
+      section.classList.add("unit-section");
+
+      const header = document.createElement("h2");
+      header.textContent = unit;
+      section.appendChild(header);
+
+      const cardContainer = document.createElement("div");
+      cardContainer.classList.add("card-container");
+
+      MOS_TOPICS[unit].forEach(topic => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.innerHTML = `
+          <img src="${topic.img}" alt="${topic.title}">
+          <h3>${topic.title}</h3>
+        `;
+        card.addEventListener("click", () => {
+          window.location.href = topic.link;
+        });
+        cardContainer.appendChild(card);
+      });
+
+      section.appendChild(cardContainer);
+      contentDiv.appendChild(section);
+    });
+  </script>
+</body>
+</html>

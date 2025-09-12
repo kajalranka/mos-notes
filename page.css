@@ -1,0 +1,151 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: #e7eaf6;
+  color: #1a1a2e;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #4a628a;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 1.2rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #dbe2f1;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Content Section */
+.content {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.content img.topic-image {
+  display: block;
+  max-width: 300px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.content h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.content h3 {
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  color: #1a1a2e;
+}
+
+.content p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.content ul {
+  list-style: disc;
+  margin: 0.5rem 0 1rem 1.5rem;
+  padding: 0;
+}
+
+.content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background: #4a628a;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .content img.topic-image {
+    max-width: 80%;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+}
