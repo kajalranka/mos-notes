@@ -16,8 +16,84 @@
   <main>
     <section class="content">
     <img src="../images/shell.jpg" alt="Shell Scripting" class="topic-image">
-      <h2>Shell Scripting</h2>
-      <p>Notes and explanations for <strong>Shell Scripting</strong> will go here.</p>
+
+      <h2>What is Shell Scripting?</h2>
+     
+   <p>
+A shell script is a text file containing a series of commands that the shell interpreter (such as bash in Linux) executes one by one.
+Shell scripts automate repetitive tasks, execute programs, manipulate files, and manage system operations.
+The shell itself is a command-line interface between the user and the underlying operating system.<br> <br>
+<strong>Writing Your First Shell Script</strong><br> 
+1. Open any text editor (e.g., nano, vi, gedit).<br>
+2. Start the script with a shebang line to specify the interpreter; for bash, use:
+<strong>#!/bin/bash </strong> <br> 
+
+3. Write the commands you want the script to execute, each on a new line.<br>
+4. Save the file with a <strong>.sh </strong>extension, e.g. <strong>myscript.sh</strong><br>
+5. Grant execute permission using:<strong> chmod +x myscript.sh </strong> <br> 
+6. Run the script using: <strong> ./myscript.sh  </strong> or <strong>bash myscript.sh </strong><br> 
+</p>
+
+<h2> Basic Features and Syntax </h2>
+
+<p>
+
+<strong>• Comments</strong>: Start a comment with #. Anything after # on that line is ignored.<br>
+<strong>• Printing Output</strong>: Use echo to display text or variables. <br>
+→ echo "Hello, World!"<br>
+<strong>• Variables</strong>: Assign with = (no spaces) and use with $ prefix.<br>
+→ NAME="MOS Student"
+echo $NAME <br>
+<strong>• User Input</strong>: read command collects input from the user.<br>
+→ read NAME
+echo "You entered $NAME" <br> 
+<strong>Conditional Statements:
+</strong>
+bash
+if [ $A -gt $B ]
+then
+    echo "A is greater"
+else
+    echo "B is greater"
+fi<br>
+<strong>• Loops: </strong> <br>
+<strong>For Loop:
+</strong>
+bash <br>
+for i in 1 2 3; do <br>
+    echo $i<br>
+done <br>
+<strong>While Loop:</strong><br>
+bash<br>
+i=1<br>
+while [ $i -le 5 ]; do<br>
+    echo $i<br>
+    i=$((i+1))<br>
+done<br>
+<strong>
+• Useful Shell Commands: </strong> <br>
+→ pwd – Print working directory<br>
+→ ls – List directory contents<br>
+→ cd – Change directory<br>
+→ cp, mv, rm – File copy, move, remove<br>
+→ man – Show manual for a command<br>
+→ chmod – Change file permissions (e.g., make script executable)<br>
+
+<strong>• Passing Arguments: </strong><br>
+Access command-line arguments using $1, $2, ... for first, second, etc.<br>
+→ echo "First argument is $1" <br> <br>
+
+<strong>Example:</strong> A Simple Script <br>
+#!/bin/bash <br>
+echo "Hello, MOS Student!"<br>
+echo "Today is: $(date)"<br>
+Save as welcome.sh, make executable, then run to see output.<br>
+</p>
+
+      
+
+
+
     </section>
   </main>
   <footer>
